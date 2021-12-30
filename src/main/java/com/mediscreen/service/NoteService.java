@@ -30,4 +30,9 @@ public class NoteService {
 
         return newNotes;
     }
+
+    public void deleteNoteList() {
+
+        noteRepository.deleteAll();
+    }
 }

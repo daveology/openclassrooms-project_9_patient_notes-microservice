@@ -16,16 +16,23 @@ public class NoteController {
     @Autowired
     NoteService noteService;
 
-    @PostMapping
+    @PostMapping("/note/add")
     public ResponseEntity addNote(@RequestBody Note note) {
 
         noteService.addNote(note);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @GetMapping
+    @GetMapping("/noteList/{patientId}")
     public ResponseEntity<Collection<Note>> getNotesByPatientId(@PathVariable Long patientId) {
 
         return ResponseEntity.ok(noteService.getNotesByPatientId(patientId));
+    }
+
+    @DeleteMapping("/deletenoteList")
+    public ResponseEntity deleteNoteList() {
+
+        noteService.deleteNoteList();
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
