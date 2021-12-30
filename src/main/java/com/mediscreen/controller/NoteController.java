@@ -36,7 +36,7 @@ public class NoteController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
-    @DeleteMapping("/deletenoteList")
+    @DeleteMapping("/noteList")
     public ResponseEntity deleteNoteList() {
 
         noteService.deleteNoteList();
