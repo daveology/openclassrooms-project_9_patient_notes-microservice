@@ -7,5 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/note")
 public class NoteController {
 
+    public void addNote() {
 
+
+    }
 }
