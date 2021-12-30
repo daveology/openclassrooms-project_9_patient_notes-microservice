@@ -20,6 +20,6 @@ public class NoteService {
 
     public Collection<Note> getNotesByPatientId(Long patientId) {
 
-        noteRepository.findByPatientId();
+        noteRepository.findByPatientId(patientId);
     }
 }
