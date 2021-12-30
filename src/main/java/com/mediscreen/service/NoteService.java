@@ -31,6 +31,11 @@ public class NoteService {
         return newNotes;
     }
 
+    public void deleteNoteById(Long patientId) {
+
+        noteRepository.deleteById(patientId.toString());
+    }
+
     public void deleteNoteList() {
 
         noteRepository.deleteAll();
