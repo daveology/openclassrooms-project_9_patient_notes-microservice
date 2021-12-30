@@ -24,8 +24,8 @@ public class NoteController {
     }
 
     @GetMapping
-    public ResponseEntity<Collection<Note>> getNotesByPatientId() {
+    public ResponseEntity<Collection<Note>> getNotesByPatientId(@PathVariable Long patientId) {
 
-        return ResponseEntity.ok(noteService.getNotesByPatientId());
+        return ResponseEntity.ok(noteService.getNotesByPatientId(patientId));
     }
 }

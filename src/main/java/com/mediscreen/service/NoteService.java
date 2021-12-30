@@ -5,6 +5,8 @@ import com.mediscreen.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+
 @Service
 public class NoteService {
 
@@ -14,5 +16,10 @@ public class NoteService {
     public void addNote(Note note) {
 
         noteRepository.insert(note);
+    }
+
+    public Collection<Note> getNotesByPatientId(Long patientId) {
+
+        noteRepository.findByPatientId();
     }
 }
