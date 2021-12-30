@@ -1,13 +1,18 @@
 package com.mediscreen.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.Objects;
 
 @Document("note")
 public class Note {
 
+    @Id
+    @Field(name = "patientId")
     private Long patientId;
+    @Field(name = "content")
     private String content;
 
     public Long getPatientId() {
