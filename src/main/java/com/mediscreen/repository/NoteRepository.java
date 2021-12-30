@@ -4,8 +4,9 @@ import com.mediscreen.model.Note;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Collection;
+import java.util.Optional;
 
 public interface NoteRepository extends MongoRepository<Note, String> {
 
-    Collection<Note> findByPatientId(Long patientId);
+    Optional<Collection<Note>> findByPatientId(Long patientId);
 }
