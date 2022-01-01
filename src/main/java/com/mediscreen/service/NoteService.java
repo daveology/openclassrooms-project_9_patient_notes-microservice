@@ -14,6 +14,8 @@ public class NoteService {
 
     @Autowired
     private NoteRepository noteRepository;
+    @Autowired
+    private SequenceGeneratorService sequenceGenerator;
 
     public void addNote(Note note) {
 
@@ -21,6 +23,7 @@ public class NoteService {
         newNote.setPatientId(note.getPatientId());
         newNote.setNoteDate(note.getNoteDate());
         newNote.setContent(note.getContent());
+        newNote.setId(sequenceGenerator.generateSequence(Note.noteSequence));
         noteRepository.save(newNote);
     }
 
