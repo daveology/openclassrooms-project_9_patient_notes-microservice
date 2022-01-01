@@ -17,7 +17,11 @@ public class NoteService {
 
     public void addNote(Note note) {
 
-        noteRepository.insert(note);
+        Note newNote = new Note();
+        newNote.setPatientId(note.getPatientId());
+        newNote.setNoteDate(note.getNoteDate());
+        newNote.setContent(note.getContent());
+        noteRepository.save(newNote);
     }
 
     public Collection<Note> getNotesByPatientId(Long patientId) {

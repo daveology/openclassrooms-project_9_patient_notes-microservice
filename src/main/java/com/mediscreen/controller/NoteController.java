@@ -28,10 +28,10 @@ public class NoteController {
         return ResponseEntity.ok(noteService.getNotesByPatientId(patientId));
     }
 
-    @DeleteMapping("/note/{patientId}")
-    public ResponseEntity deleteNoteById(@PathVariable Long patientId) {
+    @DeleteMapping("/note/{noteId}")
+    public ResponseEntity deleteNoteById(@PathVariable Long noteId) {
 
-        noteService.deleteNoteById(patientId);
+        noteService.deleteNoteById(noteId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
