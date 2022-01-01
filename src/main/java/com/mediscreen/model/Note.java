@@ -1,6 +1,7 @@
 package com.mediscreen.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -10,6 +11,9 @@ import java.util.Objects;
 
 @Document(collection = "note")
 public class Note {
+
+    @Transient
+    public static final String noteSequence = "note_sequence";
 
     @Id
     @Field("id")
