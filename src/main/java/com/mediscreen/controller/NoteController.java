@@ -16,10 +16,9 @@ public class NoteController {
     NoteService noteService;
 
     @PostMapping("/note/add")
-    public ResponseEntity addNote(@RequestBody Note note) {
+    public Note addNote(@RequestBody Note note) {
 
-        noteService.addNote(note);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        return noteService.addNote(note);
     }
 
     @GetMapping("/noteList/{patientId}")

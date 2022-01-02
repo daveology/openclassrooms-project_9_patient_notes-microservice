@@ -17,14 +17,14 @@ public class NoteService {
     @Autowired
     private SequenceGeneratorService sequenceGenerator;
 
-    public void addNote(Note note) {
+    public Note addNote(Note note) {
 
         Note newNote = new Note();
         newNote.setPatientId(note.getPatientId());
         newNote.setNoteDate(note.getNoteDate());
         newNote.setContent(note.getContent());
         newNote.setId(sequenceGenerator.generateSequence(Note.noteSequence));
-        noteRepository.save(newNote);
+        return noteRepository.save(newNote);
     }
 
     public Collection<Note> getNotesByPatientId(Long patientId) {
