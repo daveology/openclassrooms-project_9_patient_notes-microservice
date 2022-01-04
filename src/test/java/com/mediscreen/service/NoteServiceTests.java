@@ -45,7 +45,7 @@ class NoteServiceTests {
     }
 
     @Test
-    public void shouldDeletePatientList() {
+    public void shouldDeleteNoteList() {
 
         Note expected = new Note(99L, LocalDate.now(), "Hémoglobine A1C");
         Note actual = noteService.addNote(expected);
