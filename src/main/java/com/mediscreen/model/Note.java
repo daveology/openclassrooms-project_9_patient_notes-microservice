@@ -60,6 +60,12 @@ public class Note {
 
     public Note(){}
 
+    public Note(Long patientId, LocalDate noteDate, String content) {
+        this.patientId = patientId;
+        this.noteDate = noteDate;
+        this.content = content;
+    }
+
     public Note(Long id, Long patientId, LocalDate noteDate, String content) {
         this.id = id;
         this.patientId = patientId;
@@ -72,6 +78,6 @@ public class Note {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Note note = (Note) o;
-        return Objects.equals(id, note.id) && Objects.equals(patientId, note.patientId) && Objects.equals(noteDate, note.noteDate) && Objects.equals(content, note.content);
+        return Objects.equals(patientId, note.patientId) && Objects.equals(noteDate, note.noteDate) && Objects.equals(content, note.content);
     }
 }
